@@ -1,1 +1,11 @@
-
+#Calculer le capital et les intérêts obtenus au bout de 8 ans de placement avec un taux de 2.3% net par an en considérant le calcul des intérêts une fois par AN
+s = int(input("Entrer le placement de départ: "))
+v = int(input("Entrer le montant du versement mensuel: "))
+n = int(input("Entrer le nombre d'annee : "))
+t = float(input("Entrer le taux annuel : "))
+tm = (1+t/100)**(1/12)-1
+a = (1+tm)**(12*n)
+m = s*tm*a/(a-1)
+print("Le capital acquis avec intérêts est de ",round(m,2),"euros au bout de",n,"ans avec des versements mensuels de",v,"euros.")
+print("Les intérêts gagnés au taux annuel de ",t,"% sont de ",round(2.28,2),"euros")
+print("Sans placement avec intérêts le capital acqui serait de ",round(2.2,0),"euros")
