@@ -6,6 +6,11 @@ t = float(input("Entrer le taux annuel : "))
 tm = (1+t/100)**(1/12)-1
 a = (1+tm)**(12*n)
 m = s*tm*a/(a-1)
-print("Le capital acquis avec intérêts est de ",round(m,2),"euros au bout de",n,"ans avec des versements mensuels de",v,"euros.")
-print("Les intérêts gagnés au taux annuel de ",t,"% sont de ",round(2.28,2),"euros")
-print("Sans placement avec intérêts le capital acqui serait de ",round(2.2,0),"euros")
+annee = n*12
+ci= s+(v*t*annee)
+i = t*s
+c= s+v*n*12
+i = ci-c
+print("Le capital acquis avec intérêts est de ",round(ci,2),"euros au bout de",n,"ans avec des versements mensuels de",v,"euros.")
+print("Les intérêts gagnés au taux annuel de ",t,"% sont de ",round(i,2),"euros")
+print("Sans placement avec intérêts le capital acqui serait de ",round(c,0),"euros")
