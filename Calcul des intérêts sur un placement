@@ -1,16 +1,15 @@
 #Calculer le capital et les intérêts obtenus au bout de 8 ans de placement avec un taux de 2.3% net par an en considérant le calcul des intérêts une fois par AN
-s = int(input("Entrer le placement de départ: "))
-v = int(input("Entrer le montant du versement mensuel: "))
-n = int(input("Entrer le nombre d'annee : "))
+def c(n):
+    if n==0:
+        return c0
+    else:
+        return (( c(n-1)+12*m)*(1+t/100))
+
+print("Calcul du capital acquis et de ses intérêts versés lorsque les intérêts sont calculéés une fois par an.")
+c0 = int(input("Entrer le placement de départ: "))
+m = int(input("Entrer le montant du versement mensuel: "))
 t = float(input("Entrer le taux annuel : "))
-tm = (1+t/100)**(1/12)-1
-a = (1+tm)**(12*n)
-m = s*tm*a/(a-1)
-annee = n*12
-ci= s+(v*t*annee)
-i = t*s
-c= s+v*n*12
-i = ci-c
-print("Le capital acquis avec intérêts est de ",round(ci,2),"euros au bout de",n,"ans avec des versements mensuels de",v,"euros.")
-print("Les intérêts gagnés au taux annuel de ",t,"% sont de ",round(i,2),"euros")
-print("Sans placement avec intérêts le capital acqui serait de ",round(c,0),"euros")
+n = int(input("Entrer le nombre d'annee : "))
+print("Le capital acquis avec intérêts est de ",round(c(n),2),"euros au bout de",n,"ans avec des versements mensuels de",m,"euros.")
+print("Les intérêts gagnés au taux annuel de ",t,"% sont de ",round(c(n)-n*m*12-c0,2),"euros")
+print("Sans placement avec intérêts le capital acqui serait de ",round(n*m*12+c0,0),"euros")
