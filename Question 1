@@ -1,4 +1,4 @@
-#Calculer le capital et les intérêts obtenus au bout de 8 ans de placement avec un taux de 2.3% net par an en considérant le calcul des intérêts une fois par AN
+#calculate the capital and interest obtained after 8 years of investment with a rate of 2.3% net per year considering the calculation of interest once a YEAR
 def c(n):
     if n==0:
         return c0
